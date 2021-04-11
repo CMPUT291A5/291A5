@@ -12,4 +12,8 @@ A5T?SQLite.py and A5T?MongoDB.py
 A5T?SQLite.py and A5T?MongoDB.py
 
 
-The README file should have the name(s) of student(s), their ccid(s), the usual collaboration statement, a list of all included files, plus a brief instructions on how to run the applications. The README file should also include a section with a simple "how to” guide for executing the applications for each task. 
+The README file should have the name(s) of student(s), their ccid(s), the usual collaboration statement, a list of all included files, plus a brief instructions on how to run the applications. The README file should also include a section with a simple "how to” guide for executing the applications for each task.
+
+Name: Hongyang Bai, Xinyuan Zhao, Bowen Xiao
+CCID: hb2, xinyuan7, bxiao
+ALL files in this .tar file are written by Hongyang, Xinyuan, and Bowen for CMPUT 291 Assignment 5. 
