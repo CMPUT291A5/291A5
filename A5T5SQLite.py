@@ -1,25 +1,24 @@
-# 291 A5 Task4
+# 291 A5 Task5
 import sqlite3
 
 
-def task4_sql(cursor):
-    print("Task 4")
+def task5_sql(cursor):
+    print("Task 5")
+    neighbourhood = input("Please enter neighbourhood:  ")
+    run_time = input("Please enter run-time: ")
+
     try:
-        sql = ''' SELECT L.*
-        FROM reviews R, listings L
-        WHERE R.comments =  "" AND R.listing_id = L.id
-        ORDER BY listing_id ASC
-        LIMIT 10'''
-        cursor.execute(sql)
+        sql = ''' SELECT avg(price) as average_rental
+        FROM listings
+        WHERE neighbourhood = :Neighbourhood
+        '''
+        cursor.execute(sql, {'Neighbourhood': neighbourhood})
         result = cursor.fetchall()
         count = len(result)
         # check if there is data
         if count > 0:
             for i in result:
-                print('\n')
-                for j in range(9):
-                    print(i[j])
-
+                print(int(i[0]))
         else:
             print("None of them fit.\n")
 
@@ -33,7 +32,7 @@ def main():
     conn = sqlite3.connect('./A5.db')
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
-    task4_sql(c)
+    task5_sql(c)
     print("\n")
     conn.close()
 
