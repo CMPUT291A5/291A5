@@ -1,7 +1,6 @@
 '''
-this file is used to import all scv under a directory into mongodb
+291 A5 task2 
 '''
-# encoding:latin1
 
 import pymongo
 import csv
