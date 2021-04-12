@@ -1,4 +1,5 @@
 # 291 A5 Task 8
+# Written by Bowen Xiao
 import sqlite3
 import sys
 
