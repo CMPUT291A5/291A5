@@ -16,7 +16,7 @@ def main():
                 '$match': {'neighbourhood': neighbourhood}
             },
             {
-                '$group': {'_id': 'neighbourhood', 'rental_cost_avg': {'$avg': '$price'}}
+                '$group': {'_id': neighbourhood, 'rental_cost_avg': {'$avg': '$price'}}
             }
         ]):
         print(x)
