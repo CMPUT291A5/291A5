@@ -2,9 +2,14 @@
 import sqlite3
 import sys
 
+
 def task5_sql(cursor):
     print("Task 5 SQLite")
-    neighbourhood = str(sys.argv[1])
+    if len(sys.argv) > 1:
+        neighbourhood = str(sys.argv[1])
+    else:
+        neighbourhood = input("Please enter a neighbourhood: ")
+
     try:
         sql = ''' SELECT avg(price) as average_rental
         FROM listings
@@ -15,7 +20,7 @@ def task5_sql(cursor):
         count = len(result)
         # check if there is data
         if count > 0:
-            print("The average price per night of ", neighbourhood ,"is: ")
+            print("The average price per night of ", neighbourhood, "is: ")
             for i in result:
                 print(int(i[0]))
 
