@@ -5,9 +5,9 @@ import sqlite3
 def task4_sql(cursor):
     print("Task 4")
     try:
-        sql = ''' SELECT L.*
-        FROM reviews R, listings L
-        WHERE R.comments =  "" AND R.listing_id = L.id
+        sql = ''' SELECT *
+        FROM reviews 
+        WHERE comments =  "" 
         ORDER BY listing_id ASC
         LIMIT 10'''
         cursor.execute(sql)
@@ -15,11 +15,9 @@ def task4_sql(cursor):
         count = len(result)
         # check if there is data
         if count > 0:
+            print("The listing_id is:")
             for i in result:
-                print('\n')
-                for j in range(9):
-                    print(i[j])
-
+              print(i[0])
         else:
             print("None of them fit.\n")
 
