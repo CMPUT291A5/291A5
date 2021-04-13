@@ -2,10 +2,10 @@ In this A5.tar file there are 11 A5T*.py files and 1 README text
 ALL WORK ARE DONE BY Hongyang Bai, Xinyuan Zhao, Bowen Xiao
 CCID: hb2, xinyuan7, bxiao
 
-A5T1.py A5.db DONE
+A5T1.py A5.db 
 This file is used to create the sqlite3 A5.db, use command "python3 A5T1.py" to execute it
 
-A5T2.py A5db DONE
+A5T2.py A5db 
 This file is used to create the mongodb A5db, use command "python3 A5T2.py" to execute it
 
 A5T3SQLite.py and A5T3MongoDB.py
