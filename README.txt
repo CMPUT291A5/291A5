@@ -1,4 +1,4 @@
-In this A5.tar file there are 11 A5T*.py files and 1 README text
+In this A5.tgz file there are 11 A5T*.py files and 1 README text
 ALL WORK ARE DONE BY Hongyang Bai, Xinyuan Zhao, Bowen Xiao
 CCID: hb2, xinyuan7, bxiao
 
