@@ -23,7 +23,7 @@ we select the listing_id WITH comment first, then select id which NOT IN the pre
 
 A5T5SQLite.py and A5T5MongoDB.py
 Both of them runs in same way: "Python3 A5T5***.py 'NEIGHBOURHOOD_NAME' " to execute the average price of given neighbourhood
-EX: Python3 A5T8***.py Downtown 
+EX: Python3 A5T5***.py Downtown 
 we select the average price which neighbourhood = 'given neighbourhood name' and type changed as integer
 It will return the average price per night of the given neighbourhood
 
