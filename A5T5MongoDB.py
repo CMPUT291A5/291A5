@@ -9,7 +9,11 @@ def main():
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
     mydb = myclient["A5db"]
     mycoll = mydb["listings"]
-    neighbourhood = str(sys.argv[1])
+    
+    if len(sys.argv) > 1:
+        neighbourhood = str(sys.argv[1])
+    else:
+        neighbourhood = input("Please enter a neighbourhood: ")
 
     x = mycoll.aggregate([
         {
