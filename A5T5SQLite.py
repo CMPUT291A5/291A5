@@ -1,9 +1,10 @@
 # 291 A5 Task5 SQLite
 import sqlite3
+import sys
 
 def task5_sql(cursor):
     print("Task 5 SQLite")
-    neighbourhood = input("Please enter neighbourhood:  ")
+    neighbourhood = str(sys.argv[1])
     try:
         sql = ''' SELECT avg(price) as average_rental
         FROM listings
