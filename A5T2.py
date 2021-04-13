@@ -7,7 +7,7 @@ import csv
 def read_reviews():
     # read reviews
     filename = 'YVR_Airbnb_reviews.csv'
-    with open(filename) as f:
+    with open(filename, encoding="utf-8") as f:
         reader = csv.reader(f)
         next(reader)
         reviews_list = [column for column in reader]
@@ -18,7 +18,7 @@ def read_reviews():
 def read_listings():
     # read listings
     filename = 'YVR_Airbnb_listings_summary.csv'
-    with open(filename) as f:
+    with open(filename, encoding="utf-8") as f:
         reader = csv.reader(f)
         next(reader)
         listings_list = [column for column in reader]
@@ -38,7 +38,7 @@ def create_db(review_list, listing_list):
             "listing_id": int(row[0]),
             "id": int(row[1]),
             "date": row[2],
-            "reviewer_id": int(row[3]),
+            "reviewer_id": (row[3]),
             "reviewer_name": row[4],
             "comments": row[5]
         }
@@ -63,11 +63,11 @@ def create_db(review_list, listing_list):
 
 def main():
     review_list = read_reviews()
-    #print("Finish read data from reviews")
+    print("Finish read data from reviews")
     listing_list = read_listings()
-    #print("Finish read data from listings")
+    print("Finish read data from listings")
     create_db(review_list, listing_list)
-    # print("done")
+    print("done")
 
 
 main()
