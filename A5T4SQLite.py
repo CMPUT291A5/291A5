@@ -1,9 +1,10 @@
-# 291 A5 Task4
+# 291 A5 Task4 SQLite
 import sqlite3
-
+import time
 
 def task4_sql(cursor):
-    print("Task 4")
+    print("Task 4 SQLite")
+    start_time = time.time()
     try:
         sql = ''' SELECT *
         FROM reviews 
@@ -11,6 +12,8 @@ def task4_sql(cursor):
         ORDER BY listing_id ASC
         LIMIT 10'''
         cursor.execute(sql)
+        end_time = time.time()
+        run_time = (end_time - start_time)* 1000
         result = cursor.fetchall()
         count = len(result)
         # check if there is data
@@ -18,6 +21,7 @@ def task4_sql(cursor):
             print("The listing_id is:")
             for i in result:
               print(i[0])
+            print("Run time for Task 4 SQLite is:{}ms.".format(run_time))
         else:
             print("None of them fit.\n")
 
