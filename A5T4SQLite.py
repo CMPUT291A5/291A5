@@ -6,11 +6,12 @@ def task4_sql(cursor):
     print("Task 4 SQLite")
     start_time = time.time()
     try:
-        sql = ''' SELECT *
-        FROM reviews 
-        WHERE comments =  "" 
-        ORDER BY listing_id ASC
-        LIMIT 10'''
+        sql = '''SELECT DISTINCT id 
+        FROM listings
+        WHERE id not in (SELECT DISTINCT listing_id FROM reviews WHERE comments != '')
+        ORDER by id
+        limit 10
+        '''
         cursor.execute(sql)
         end_time = time.time()
         run_time = (end_time - start_time)* 1000
