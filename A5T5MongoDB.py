@@ -1,6 +1,5 @@
 # 291 A5 Task5 MongoDB
 import pymongo
-import time
 
 def main():
     print("Task 5 MongoDB")
@@ -10,18 +9,21 @@ def main():
     mycoll = mydb["listings"]
     neighbourhood = input("Please enter neighbourhood:  ")
 
-    start_time = time.time()
-    for x in mycoll.aggregate([
+
+    x = mycoll.aggregate([
             {
                 '$match': {'neighbourhood': neighbourhood}
             },
             {
                 '$group': {'_id': neighbourhood, 'rental_cost_avg': {'$avg': '$price'}}
             }
-        ]):
-        print(x)
-    end_time = time.time()
-    run_time = (end_time - start_time) * 1000
-    print("Run time for Task 5 MongoDB is:{}ms.".format(run_time))
+        ])
+    
+    #change the float to int
+    for i in x:
+           print('The average price in', neighbourhood, int(i['rental_cost_avg']), '$')
+        
+        
+
 
 main()
