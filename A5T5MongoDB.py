@@ -1,5 +1,7 @@
+
 # 291 A5 Task5 MongoDB
 import pymongo
+import sys
 
 def main():
     print("Task 5 MongoDB")
@@ -7,23 +9,21 @@ def main():
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
     mydb = myclient["A5db"]
     mycoll = mydb["listings"]
-    neighbourhood = input("Please enter neighbourhood:  ")
-
+    print("Please enter neighbourhood:  ")
+    neighbourhood = str(sys.argv[1])
 
     x = mycoll.aggregate([
-            {
-                '$match': {'neighbourhood': neighbourhood}
-            },
-            {
-                '$group': {'_id': neighbourhood, 'rental_cost_avg': {'$avg': '$price'}}
-            }
-        ])
-    
-    #change the float to int
+        {
+            '$match': {'neighbourhood': neighbourhood}
+        },
+        {
+            '$group': {'_id': neighbourhood, 'rental_cost_avg': {'$avg': '$price'}}
+        }
+    ])
+    # change the float to int
     for i in x:
-           print('The average price in', neighbourhood, int(i['rental_cost_avg']), '$')
-        
-        
+        print('The average price in', neighbourhood, int(i['rental_cost_avg']), '$')
+
 
 
 main()
