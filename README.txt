@@ -3,7 +3,7 @@ A5T2.py A5db DONE
 
 Tasks 4, 8 and 9 are mandatory
 A5T4SQLite.py NEED TO BE REVIZED and A5T4MongoDB.py PROCESSING
-A5T8SQLite.py DONE and A5T8MongoDB.py NEED TO BE REVIZED
+A5T8SQLite.py DONE and A5T8MongoDB.py DONE
 A5T9MongoDB.py PROCESSING
 
 
