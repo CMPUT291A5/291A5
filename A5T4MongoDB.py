@@ -1,9 +1,6 @@
 # 291 A5 Task4 MongoDB
 import pymongo
 
-
-# {'$match': {'$or':{'comments':{'$eq':''},{ '$exists': False } }}},
-
 def main():
     print("Task 4 MongoDB")
     # open db
