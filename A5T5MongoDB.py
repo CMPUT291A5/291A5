@@ -9,7 +9,6 @@ def main():
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
     mydb = myclient["A5db"]
     mycoll = mydb["listings"]
-    print("Please enter neighbourhood:  ")
     neighbourhood = str(sys.argv[1])
 
     x = mycoll.aggregate([
