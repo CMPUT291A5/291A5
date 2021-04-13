@@ -15,5 +15,5 @@ def main():
         print(x)
     end_time = time.time()
     run_time = (end_time - start_time) * 1000
-    print("Run time for Task 4 SQLite is:{}ms.".format(run_time))
+    print("Run time for Task 4 MongoDB is:{}ms.".format(run_time))
 main()
