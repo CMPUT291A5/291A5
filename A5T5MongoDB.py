@@ -1,6 +1,6 @@
-
+# 291 A5 Task5 MongoDB
 import pymongo
-
+import time
 
 def main():
     print("Task 5 MongoDB")
@@ -9,8 +9,8 @@ def main():
     mydb = myclient["A5db"]
     mycoll = mydb["listings"]
     neighbourhood = input("Please enter neighbourhood:  ")
-    run_time = input("Please enter run-time: ")
 
+    start_time = time.time()
     for x in mycoll.aggregate([
             {
                 '$match': {'neighbourhood': neighbourhood}
@@ -20,5 +20,8 @@ def main():
             }
         ]):
         print(x)
+    end_time = time.time()
+    run_time = (end_time - start_time) * 1000
+    print("Run time for Task 4 SQLite is:{}ms.".format(run_time))
 
 main()
